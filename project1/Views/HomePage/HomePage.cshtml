@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "HomePage";
+    Layout = "~/Views/_LayoutUser.cshtml";
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Sidebar 01</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Css/style.css">
+</head>
+<body>
+
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="p-4 pt-5">
+                <a class="navbar-brand" href="#">
+                    <img src="~/Images/logo.png" alt="Logo" style="width:40px;">
+                </a>
+                <ul class="list-unstyled components mb-5">
+                    <li class="active"><a href="#">Ana Sayfa</a></li>
+                    <li><a @Html.ActionLink("Hesap", "InfoPage", "InfoPage")></a></li>
+                    <li><a @Html.ActionLink("Araçlar", "MapPage", "MapPage")></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="content" class="p-4 p-md-5">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Ana Sayfa</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" @Html.ActionLink("Hesap", "InfoPage", "InfoPage")></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" @Html.ActionLink("Araçlar", "MapPage", "MapPage")></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" @Html.ActionLink("Çıkış", "Login", "Login")></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <h2 class="mb-4">Hoşgeldiniz..</h2>
+
+        </div>
+    </div>
+
+    <script src="Scripts/jquery.min.js"></script>
+    <script src="Scripts/popper.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/main.js"></script>
+</body>
+</html>

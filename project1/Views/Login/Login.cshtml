@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/_LoginLayout.cshtml";
+}
+
+<h1>Giriş Yapınız </h1>
+<div class="w3ls-login box box--big">
+    <!-- form starts here -->
+    <form action="Verify" method="post">
+        <div class="agile-field-txt">
+            <label><i class="fa fa-user" aria-hidden="true"></i> Kullanıcı Adı: </label>
+            <input type="text" name="Username" placeholder="Kullanıcı Adı" required="" />
+        </div>
+        <div class="agile-field-txt">
+            <label><i class="fa fa-unlock-alt" aria-hidden="true"></i> Şifre: </label>
+            <input type="password" name="Password" placeholder="Şifre" required="" id="myInput" />
+            <div class="agile_label">
+                <input id="check3" name="check3" type="checkbox" value="Şifreyi Göster" onclick="myFunction()">
+                <label class="check" for="check3">Şifreyi Göster</label>
+            </div>
+            <div class="agile-right">
+                <a href="ForgotPass">Şifreni mi unuttun?</a>
+            </div>
+        </div>
+        <!-- script for show password -->
+        <script>
+				function myFunction() {
+					var x = document.getElementById("myInput");
+					if (x.type === "password") {
+						x.type = "text";
+					} else {
+						x.type = "password";
+					}
+				}
+        </script>
+        <!-- //end script -->
+        <input type="submit" value="Giriş Yap">
+    </form>
+</div>
+<!-- //form ends here -->
