@@ -17,7 +17,9 @@ namespace project1.Controllers
         SqlDataReader dr;
         SqlDataAdapter da;
         DataSet ds = new DataSet();
+        SqlDataAdapter vehicle_da;
         DataSet vehicle_ds = new DataSet();
+
 
         [HttpGet]
         // GET: Login
@@ -46,7 +48,20 @@ namespace project1.Controllers
                 Session["Lastname"] = row[3].ToString();
                 Session["Mail"] = row[4].ToString();
             }
+
+            // var list = (List<int>)Session["test"];
+            // select vehicleID from vehicleTable where vehicleUserID = 1;
             
+            vehicle_da = new SqlDataAdapter("select vehicleID from vehicleTable where vehicleUserID = " + Session["UserID"], con);
+            vehicle_da.Fill(vehicle_ds);
+            
+            List<string> idList = new List<string>();
+            foreach (DataRow row in vehicle_ds.Tables[0].Rows)
+            {
+               idList.Add(row[0].ToString());
+            }
+            Session["CarIDs"] = idList;
+
             com.CommandText = "select * from userTable where username='" + acc.Username + "' and password='" + acc.Password + "'";
             dr = com.ExecuteReader();
             if (dr.Read())

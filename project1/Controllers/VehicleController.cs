@@ -19,8 +19,9 @@ namespace trackingSystem.Controllers
         public ActionResult Index()
         {
             var database = mongoClient.GetDatabase("VehicleDB");
-            var collection = database.GetCollection<VehicleModel>("VehicleData");
-            var vehicleResults = collection.Find<VehicleModel>(a => true).ToList();
+            var collection = database.GetCollection<VehicleModel>("vehicleData");
+            List<string> idList = (List<string>)Session["CarIDs"];
+            var vehicleResults = collection.Find<VehicleModel>(a => idList.Contains(a.Car_ID)).ToList();
 
             return View(vehicleResults);
         }
