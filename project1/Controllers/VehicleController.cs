@@ -14,20 +14,15 @@ namespace trackingSystem.Controllers
 {
     public class VehicleController : Controller
     {
-        private MongoDBContext dbcontext;
-        private IMongoCollection<VehicleModel> vehicleCollection;
+        IMongoClient mongoClient = new MongoClient("mongodb://localhost:27017");
 
-        public VehicleController()
-        {
-            dbcontext = new MongoDBContext();
-            vehicleCollection = dbcontext.database.GetCollection<VehicleModel>("vehicle");
-        }
-
-        // GET: Vehicles
         public ActionResult Index()
         {
-            List<VehicleModel> vehicles = vehicleCollection.AsQueryable<VehicleModel>().ToList();
-            return View(vehicles);
+            var database = mongoClient.GetDatabase("VehicleDB");
+            var collection = database.GetCollection<VehicleModel>("VehicleData");
+            var vehicleResults = collection.Find<VehicleModel>(a => true).ToList();
+
+            return View(vehicleResults);
         }
     }
 }
