@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using trackingSystem.Models;
 using System.Data.SqlClient;
+using System.Data;
+using System.Web.Security;
 
 namespace project1.Controllers
 {
@@ -13,9 +15,11 @@ namespace project1.Controllers
         SqlConnection con = new SqlConnection();
         SqlCommand com = new SqlCommand();
         SqlDataReader dr;
-        // GET: Account
-        [HttpGet]
+        SqlDataAdapter da;
+        DataSet ds = new DataSet();
+        DataSet vehicle_ds = new DataSet();
 
+        [HttpGet]
         // GET: Login
         public ActionResult Login()
         {
@@ -32,6 +36,17 @@ namespace project1.Controllers
             connectionString();
             con.Open();
             com.Connection = con;
+            da = new SqlDataAdapter("select * from userTable where username = '" + acc.Username.ToString() + "'", con);
+            da.Fill(ds);
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                Session["UserID"] = int.Parse(row[0].ToString());
+                Session["Username"] = row[1].ToString();
+                Session["Firstname"] = row[2].ToString();
+                Session["Lastname"] = row[3].ToString();
+                Session["Mail"] = row[4].ToString();
+            }
+            
             com.CommandText = "select * from userTable where username='" + acc.Username + "' and password='" + acc.Password + "'";
             dr = com.ExecuteReader();
             if (dr.Read())

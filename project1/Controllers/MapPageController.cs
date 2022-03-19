@@ -8,9 +8,10 @@ namespace project1.Controllers
 {
     public class MapPageController : Controller
     {
-        // GET: Map
+        // GET: MapPage
         public ActionResult MapPage()
         {
+            
             return View();
         }
     }

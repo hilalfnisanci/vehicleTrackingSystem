@@ -1,4 +1,5 @@
-﻿
+﻿@model trackingSystem.Models.Account
+
 @{
     ViewBag.Title = "InfoPage";
     Layout = "~/Views/_LayoutUser.cshtml";
@@ -55,7 +56,24 @@
                     </div>
                 </div>
             </nav>
-            
+            <div>
+                @if (Session["UserID"] != null)
+                {
+                    <a> Kullanıcı ID: @Session["UserID"].ToString()</a>}
+                <br>
+                @if (Session["Username"] != null)
+                {
+                    <a> Kullanıcı Adı: @Session["Username"].ToString()</a>}
+                <br>
+                @if (Session["Firstname"] != null && Session["Lastname"] != null)
+                {
+                    <a> Ad Soyad: @Session["Firstname"].ToString() @Session["Lastname"].ToString()</a>}
+                <br>
+                @if (Session["Mail"] != null)
+                {
+                    <a> Mail: @Session["Mail"].ToString()</a>}
+                <br>
+            </div>
         </div>
     </div>
     <script src="Scripts/jquery.min.js"></script>

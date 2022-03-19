@@ -235,10 +235,6 @@
     <Content Include="Core\Compression\Snappy\lib\linux\libsnappy64.so" />
     <None Include="packages.config" />
     <Content Include="Views\Vehicle\Index.cshtml" />
-    <Content Include="Views\Vehicle\Details.cshtml" />
-    <Content Include="Views\Vehicle\Create.cshtml" />
-    <Content Include="Views\Vehicle\Edit.cshtml" />
-    <Content Include="Views\Vehicle\Delete.cshtml" />
     <Content Include="Views\_LoginLayout.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\Error.cshtml" />

@@ -22,6 +22,6 @@ namespace trackingSystem.Models
         public String Longitude { get; set; }
         
         [BsonElement("Car_ID")]
-        public String Car_ID { get; set; }
+        public int Car_ID { get; set; }
     }
 }
