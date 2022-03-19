@@ -3,9 +3,7 @@
 function initMap() {
     
     map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: -34.397, lng: 150.644 },
+        center: { lat: 62.909449, lng: 17.086168 },
         zoom: 8,
     });
-    
-    
 };
