@@ -5,6 +5,7 @@
 }
 
 <h1>Giriş Yapınız </h1>
+
 <div class="w3ls-login box box--big">
     <!-- form starts here -->
     <form action="Verify" method="post">
@@ -37,5 +38,13 @@
         <!-- //end script -->
         <input type="submit" value="Giriş Yap">
     </form>
+
 </div>
 <!-- //form ends here -->
+@if (Session["FalseCount"] == "true")
+{
+    <script>
+        confirm("Hatalı Giriş");
+    </script>
+
+}
