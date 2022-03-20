@@ -56,22 +56,20 @@
                     </div>
                 </div>
             </nav>
-            <div>
-                @if (Session["UserID"] != null)
-                {
-                    <a> Kullanıcı ID: @Session["UserID"].ToString()</a>}
-                <br>
+            <div class="user-text">
+                <h3>Kullanıcı Bilgileri</h3>
                 @if (Session["Username"] != null)
                 {
-                    <a> Kullanıcı Adı: @Session["Username"].ToString()</a>}
+                    <h7>Kullanıcı Adı: @Session["Username"].ToString()</h7>}
                 <br>
                 @if (Session["Firstname"] != null && Session["Lastname"] != null)
                 {
-                    <a> Ad Soyad: @Session["Firstname"].ToString() @Session["Lastname"].ToString()</a>}
+                    <h7>Kullanıcı Adı Soyadı: @Session["Firstname"].ToString() @Session["Lastname"].ToString()</h7>}
                 <br>
                 @if (Session["Mail"] != null)
                 {
-                    <a> Mail: @Session["Mail"].ToString()</a>}
+                    <h7>Mail Adresi: @Session["Mail"].ToString()</h7>
+                }
                 <br>
             </div>
         </div>
