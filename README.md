@@ -7,3 +7,8 @@
   <ul>Data is taken from the NoSQL database and displayed on the map with the Google Map API.</ul>
   <ul>MongoDB was preferred for the database.</ul>
 </h4>
+
+<h6>
+  <img alt="C#" src="https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white"/>
+  <img alt=".NEt" src="https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white"/>
+</h6>
